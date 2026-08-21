@@ -30,3 +30,8 @@ neural-engine*
 .env
 .ssh/
 .gnupg/
+downloads/
+*.apk
+.rules/
+*rclone*
+.config/rclone/
