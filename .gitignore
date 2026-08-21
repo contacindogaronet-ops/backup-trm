@@ -1,37 +1,8 @@
-# System & Termux Symlink/Storage
-storage/
-../usr/
-.cache/
-.npm/
-.cargo/
-.go/
-go/pkg/
-
-# Temporary, Sessions, & Caches
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
 *.log
-*.tmp
-*.sock
-*.pid
-state.json
-fastcache/
-
-# Binary & Executables
-*.exe
-GA1-Engine*
-r2*
-release*
-neural-engine*
-
-# Shell History & Credentials
-.bash_history
-.zsh_history
-.lesshst
-.netrc
-.env
-.ssh/
-.gnupg/
-downloads/
-*.apk
-.rules/
-*rclone*
-.config/rclone/
+.env*
+!.env.example
