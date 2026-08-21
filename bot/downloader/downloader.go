@@ -65,7 +65,12 @@ func (d *Downloader) ResolveMedia(media tg.MessageMediaClass) (*MediaTarget, err
 		}
 
 		return &MediaTarget{
-			Location: doc.AsInputDocumentFileLocation(),
+			Location: &tg.InputDocumentFileLocation{
+				ID:            doc.ID,
+				AccessHash:    doc.AccessHash,
+				FileReference: doc.FileReference,
+				ThumbSize:     "",
+			},
 			FileName: fileName,
 			Size:     doc.Size,
 			MimeType: doc.MimeType,
