@@ -1,0 +1,56 @@
+name: Build Go Engine (p3)
+
+on:
+  push:
+    paths:
+      - 'p2/**'
+      - '.github/workflows/build-p3.yml'
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Compile Engine
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          # Target Android / Termux
+          - goos: linux
+            goarch: arm64
+            output_name: GA1-Engine-arm64
+          # Target Linux Server / VPS
+          - goos: linux
+            goarch: amd64
+            output_name: GA1-Engine-amd64
+
+    defaults:
+      run:
+        working-directory: ./p2
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+          check-latest: true
+
+      - name: Download / Tidy Modules
+        run: go mod tidy
+
+      - name: Build Static Binary
+        env:
+          GOOS: ${{ matrix.goos }}
+          GOARCH: ${{ matrix.goarch }}
+          CGO_ENABLED: 0
+        run: |
+          mkdir -p dist
+          go build -trimpath -ldflags="-s -w" -o dist/${{ matrix.output_name }} .
+
+      - name: Upload Binary Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.output_name }}
+          path: p3/dist/${{ matrix.output_name }}
