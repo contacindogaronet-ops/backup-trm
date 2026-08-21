@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#2563eb">
+    <title>Matrix - NganjukCore</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="toastContainer" class="toast-container"></div>
+    <div class="app-container">
+        <header class="bento-header">
+            <div><h2>Live Packet Matrix</h2><p>Traffic Ingress Analysis</p></div>
+            <div class="header-actions">
+                <div class="scroll-toggle"><input type="checkbox" id="autoScroll" checked><label for="autoScroll">Auto-Scroll</label></div>
+                <button id="theme-toggle" class="btn-theme">🌙</button>
+            </div>
+        </header>
+        <input type="text" id="matrix-search" class="bento-input" placeholder="🔍 Filter by host or verdict (e.g., DROP, 443)...">
+        <div class="table-container" id="tableWrapper">
+            <table>
+                <thead><tr><th>Time</th><th>Target Host (Click Actions)</th><th>Verdict</th><th style="width: 50px;">Act</th></tr></thead>
+                <tbody id="logs"><tr><td colspan="4" class="waiting">Awaiting packets...</td></tr></tbody>
+            </table>
+        </div>
+    </div>
+    <div class="dock-wrapper">
+        <nav class="pill-dock">
+            <a href="index.html" class="dock-btn">📊 Core</a>
+            <a href="traffic.html" class="dock-btn active">🔌 Matrix</a>
+            <a href="ai.html" class="dock-btn">🧠 Neural</a>
+            <a href="control.html" class="dock-btn">⚙️ Ctrl</a>
+        </nav>
+    </div>
+    <script src="global.js"></script><script src="traffic.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#2563eb">
+    <title>Neural - NganjukCore</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="bento-header">
+            <div><h2>Neural Engine Status</h2><p>Cognitive Optimization</p></div>
+            <div class="header-actions"><button id="theme-toggle" class="btn-theme">🌙</button></div>
+        </header>
+        <div class="bento-card">
+            <div class="ai-header"><div class="ai-pulse" id="ai-pulse-ui"></div><h1 id="ai-status-text">STANDBY</h1></div>
+            <div class="chart-box"><canvas id="aiCoreChart"></canvas></div>
+            <div class="neural-grid" id="neuralGrid"></div>
+            <div class="bento-grid-3" style="margin-top:16px;">
+                <div class="bento-card bg-gray"><span>Topology</span><div class="val-small">50 Nodes</div></div>
+                <div class="bento-card bg-gray"><span>Learning Rate</span><div class="val-small">0.05</div></div>
+                <div class="bento-card bg-gray"><span>Mode</span><div id="ai-mode-text" class="val-small">IDLE</div></div>
+            </div>
+        </div>
+    </div>
+    <div class="dock-wrapper">
+        <nav class="pill-dock">
+            <a href="index.html" class="dock-btn">📊 Core</a>
+            <a href="traffic.html" class="dock-btn">🔌 Matrix</a>
+            <a href="ai.html" class="dock-btn active">🧠 Neural</a>
+            <a href="control.html" class="dock-btn">⚙️ Ctrl</a>
+        </nav>
+    </div>
+    <script src="global.js"></script><script src="ai.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="manifest" href="manifest.json">
+    <title>Core - NganjukCore</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="toastContainer" class="toast-container"></div>
+    <div class="app-container">
+        <header class="bento-header">
+            <div><h2>System Core Overview</h2><p>Realtime Telemetry & Throughput</p></div>
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn-theme">🌙</button>
+                <div class="status-badge"><span class="ping-dot"></span> ONLINE</div>
+            </div>
+        </header>
+        <div class="bento-grid-hero">
+            <div class="bento-card bg-primary text-white speed-card"><span class="bento-title text-light">⚡ REALTIME THROUGHPUT</span><div id="live-speed" class="speed-val">0.00 <span class="unit text-light">MB/s</span></div></div>
+            <div class="bento-card"><span class="bento-title">📦 TOTAL PROCESSED</span><div id="total-data" class="speed-val">0.00 <span class="unit">MB</span></div></div>
+        </div>
+        <div class="bento-card" style="margin-top:16px; padding: 16px;"><h3 class="panel-title">Throughput Histogram (MB/s)</h3><div class="histogram-box"><canvas id="trafficHistogram"></canvas></div></div>
+        <div class="bento-grid-3" style="margin-top:16px;">
+            <div class="bento-card"><span>Uptime</span><div id="uptime" class="val-small">--:--:--</div></div>
+            <div class="bento-card"><span>Active Sockets</span><div id="active-conns" class="val-small">0</div></div>
+            <div class="bento-card"><span>RAM Used</span><div id="memory" class="val-small">0 MB</div></div>
+        </div>
+        <div class="bento-card" style="margin-top:16px; padding: 20px;">
+            <h3 class="panel-title">Protocol Analytics</h3>
+            <div class="bento-grid-2">
+                <div class="a-box"><span class="a-label">🛡️ Ads Blocked</span><div id="val-ads" class="a-val text-red">0</div></div>
+                <div class="a-box"><span class="a-label">👑 VIP System</span><div id="val-vip" class="a-val text-blue">0</div></div>
+                <div class="a-box"><span class="a-label">✈️ Telegram</span><div id="val-tele" class="a-val text-sky">0</div></div>
+                <div class="a-box"><span class="a-label">⚡ RAM Cache</span><div id="val-cache" class="a-val text-amber">0</div></div>
+            </div>
+        </div>
+    </div>
+    <div class="dock-wrapper">
+        <nav class="pill-dock">
+            <a href="index.html" class="dock-btn active">📊 Core</a>
+            <a href="traffic.html" class="dock-btn">🔌 Matrix</a>
+            <a href="ai.html" class="dock-btn">🧠 Neural</a>
+            <a href="control.html" class="dock-btn">⚙️ Ctrl</a>
+        </nav>
+    </div>
+    <script src="global.js"></script><script src="core.js"></script>
+</body>
+</html>
+        <!-- Pindah ke dalam .app-container sebelum .dock-wrapper -->
+        <div class="bento-grid-2" style="margin-top:16px;">
+            <div class="bento-card"><span>⏱️ LATENCY</span><div id="val-latency" class="val-small">-- ms</div></div>
+            <div class="bento-card"><span>🏆 TOP TALKERS</span><div id="val-top" class="val-small" style="font-size:10px;">-</div></div>
+        </div>

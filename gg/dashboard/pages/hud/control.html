@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#2563eb">
+    <title>Control - NganjukCore</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="toastContainer" class="toast-container"></div>
+    <div class="app-container">
+        <header class="bento-header">
+            <div><h2>Gateway Control</h2><p>System Preferences</p></div>
+            <div class="header-actions"><button id="theme-toggle" class="btn-theme">🌙</button></div>
+        </header>
+        
+        <div class="bento-card" style="margin-bottom: 16px; padding: 20px;">
+            <h3 class="panel-title">🛡️ Dynamic Firewall Rules Board</h3>
+            <p style="font-size:12px; color:var(--text-muted); margin:-10px 0 15px 0;">Daftar domain kustom yang lu bantai atau loloskan lewat pintasan Matrix.</p>
+            <div class="rules-board-list" id="rulesBoardList"><div class="rules-empty">Belum ada aturan kustom terpasang, Puh.</div></div>
+        </div>
+
+        <div class="bento-card">
+            <div class="control-row">
+                <div><h4>Pooling Speed</h4><p>Interval sinkronisasi data antar kamar</p></div>
+                <div class="refresh-switch-group">
+                    <button class="btn-refresh" data-time="1000" id="btn1s">1s</button>
+                    <button class="btn-refresh" data-time="3000" id="btn3s">3s</button>
+                    <button class="btn-refresh" data-time="0" id="btnPause">PAUSE</button>
+                </div>
+            </div>
+            <div class="control-row border-none">
+                <div><h4>Format Brain</h4><p>Hapus ingatan AI</p></div>
+                <button id="btn-nuke" class="btn-danger">FORMAT AI</button>
+            </div>
+        </div>
+    </div>
+    <div class="dock-wrapper">
+        <nav class="pill-dock">
+            <a href="index.html" class="dock-btn">📊 Core</a>
+            <a href="traffic.html" class="dock-btn">🔌 Matrix</a>
+            <a href="ai.html" class="dock-btn">🧠 Neural</a>
+            <a href="control.html" class="dock-btn active">⚙️ Ctrl</a>
+        </nav>
+    </div>
+    <script src="global.js"></script><script src="control.js"></script>
+</body>
+</html>
